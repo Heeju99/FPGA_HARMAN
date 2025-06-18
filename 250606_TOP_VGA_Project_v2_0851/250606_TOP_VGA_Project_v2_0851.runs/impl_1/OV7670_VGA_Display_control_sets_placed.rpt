@@ -1,0 +1,115 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon Jun  9 09:48:15 2025
+| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file OV7670_VGA_Display_control_sets_placed.rpt
+| Design       : OV7670_VGA_Display
+| Device       : xc7a35t
+-----------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    37 |
+|    Minimum number of control sets                        |    37 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   109 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    37 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     7 |
+| >= 6 to < 8        |     7 |
+| >= 8 to < 10       |     9 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    11 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              19 |           13 |
+| No           | No                    | Yes                    |              99 |           36 |
+| No           | Yes                   | No                     |              24 |            8 |
+| Yes          | No                    | No                     |              47 |           15 |
+| Yes          | No                    | Yes                    |             156 |           48 |
+| Yes          | Yes                   | No                     |             146 |           64 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------+--------------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
+|         Clock Signal         |                            Enable Signal                           |             Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------------+--------------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
+|  U_clk_wiz_2/inst/clk_100Mhz | U_OV7670_Master/U_SCCB_controlUnit/r_scl                           | reset_IBUF                               |                1 |              1 |         1.00 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_OV7670_Master/U_SCCB_controlUnit/r_sda_i_1_n_0                   | reset_IBUF                               |                1 |              1 |         1.00 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_play_fsm2/led_next                                               | reset_IBUF                               |                1 |              4 |         4.00 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_play_fsm1/led_next                                               | reset_IBUF                               |                2 |              4 |         2.00 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_btn_debounce2/E[0]                                               |                                          |                1 |              4 |         4.00 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_10               |                                          |                1 |              4 |         4.00 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_11               |                                          |                1 |              4 |         4.00 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_OV7670_Master/U_SCCB_controlUnit/bitCount[3]_i_1_n_0             | reset_IBUF                               |                2 |              4 |         2.00 |
+|  ov7670_pclk_IBUF_BUFG       |                                                                    |                                          |                2 |              5 |         2.50 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_OV7670_Master/U_SCCB_controlUnit/dataBit[5]_i_1_n_0              | reset_IBUF                               |                2 |              6 |         3.00 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_buzzer_PWM/note_index[4]_i_1_n_0                                 | reset_IBUF                               |                2 |              6 |         3.00 |
+|  U_clk_wiz_2/inst/clk_100Mhz |                                                                    |                                          |                3 |              6 |         2.00 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_OV7670_Master/U_SCCB_controlUnit/FSM_onehot_sda_state[5]_i_1_n_0 | reset_IBUF                               |                2 |              6 |         3.00 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_OV7670_Master/U_SCCB_controlUnit/r_addr[6]_i_1_n_0               | reset_IBUF                               |                3 |              7 |         2.33 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_buzzer_PWM/freq_cnt[0]_i_1_n_0                                   |                                          |                2 |              7 |         3.50 |
+|  ov7670_pclk_IBUF_BUFG       | U_OV7670_MemController/byte0[7]_i_1_n_0                            | reset_IBUF                               |                4 |              7 |         1.75 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[8]_1                |                                          |                2 |              8 |         4.00 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_5                |                                          |                2 |              8 |         4.00 |
+|  U_clk_wiz_2/inst/clk_25Mhz  |                                                                    |                                          |                8 |              8 |         1.00 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_btn_debounce1/tick_1khz_reg_n_0                                  | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_btn_debounce2/tick_1khz_reg_n_0                                  | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_VGA_Controller/U_Pixel_Counter/erode_oe_internal_reg             |                                          |                2 |              8 |         4.00 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_13               |                                          |                2 |              8 |         4.00 |
+|  ov7670_pclk_IBUF_BUFG       | U_OV7670_MemController/v_counter                                   | U_OV7670_MemController/RSTB              |                3 |              8 |         2.67 |
+|  U_clk_wiz_2/inst/clk_100Mhz |                                                                    | U_OV7670_Master/U_SCCB_controlUnit/SR[0] |                3 |              9 |         3.00 |
+|  ov7670_pclk_IBUF_BUFG       | U_OV7670_MemController/byte_toggle                                 | U_OV7670_MemController/RSTC              |                3 |             10 |         3.33 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_VGA_Controller/U_Pixel_Counter/v_counter                         | reset_IBUF                               |                7 |             17 |         2.43 |
+|  U_clk_wiz_2/inst/clk_25Mhz  |                                                                    | reset_IBUF                               |                7 |             17 |         2.43 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_VGA_Controller/U_Pixel_Counter/erode_line2_pixel                 |                                          |                7 |             18 |         2.57 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_Mopology_Filter_TOP/U_Mopology_Filter1/dilate_line2_pixel        |                                          |                5 |             18 |         3.60 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_VGA_Controller/U_Pixel_Counter/btn_debounced_d_reg_0[0]          | reset_IBUF                               |                5 |             18 |         3.60 |
+|  U_clk_wiz_2/inst/clk_25Mhz  | U_VGA_Controller/U_Pixel_Counter/btn_debounced_d_reg[0]            | reset_IBUF                               |                5 |             18 |         3.60 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_play_fsm1/count_3sec_next                                        | reset_IBUF                               |               10 |             29 |         2.90 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_play_fsm2/count_3sec_next                                        | reset_IBUF                               |               13 |             29 |         2.23 |
+|  U_clk_wiz_2/inst/clk_100Mhz | U_buzzer_PWM/note_timer[31]_i_1_n_0                                | reset_IBUF                               |                6 |             32 |         5.33 |
+|  ov7670_pclk_IBUF_BUFG       | U_OV7670_MemController/pix_data_reg                                | reset_IBUF                               |               36 |             79 |         2.19 |
+|  U_clk_wiz_2/inst/clk_100Mhz |                                                                    | reset_IBUF                               |               34 |             97 |         2.85 |
++------------------------------+--------------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
+
+

@@ -1,0 +1,737 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Wed Jun  4 20:39:29 2025
+| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file OV7670_VGA_Display_control_sets_placed.rpt
+| Design       : OV7670_VGA_Display
+| Device       : xc7a35t
+-----------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   659 |
+|    Minimum number of control sets                        |   659 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    64 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   659 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     5 |
+| >= 8 to < 10       |   643 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              10 |            6 |
+| No           | No                    | Yes                    |              79 |           27 |
+| No           | Yes                   | No                     |               9 |            3 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              62 |           24 |
+| Yes          | Yes                   | No                     |            5208 |         1828 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------+--------------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
+|             Clock Signal             |                            Enable Signal                           |             Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------------+--------------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_OV7670_Master/U_SCCB_controlUnit/r_sda_i_1_n_0                   | reset_IBUF                               |                1 |              2 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_OV7670_Master/U_SCCB_controlUnit/r_scl                           | reset_IBUF                               |                1 |              2 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_OV7670_Master/U_SCCB_controlUnit/bitCount[3]_i_1_n_0             | reset_IBUF                               |                2 |              4 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_OV7670_Master/U_SCCB_controlUnit/dataBit[5]_i_1_n_0              | reset_IBUF                               |                3 |              6 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_OV7670_Master/U_SCCB_controlUnit/FSM_onehot_sda_state[5]_i_1_n_0 | reset_IBUF                               |                1 |              6 |         6.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_OV7670_Master/U_SCCB_controlUnit/r_addr[6]_i_1_n_0               | reset_IBUF                               |                3 |              7 |         2.33 |
+|  ov7670_pclk_IBUF_BUFG               |                                                                    | reset_IBUF                               |                3 |              7 |         2.33 |
+|  ov7670_pclk_IBUF_BUFG               | U_OV7670_MemController/byte0_0                                     | reset_IBUF                               |                2 |              7 |         3.50 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[203][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[215][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[199][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[200][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[193][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[190][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[19][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[20][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[211][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[218][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[209][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[195][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[21][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[191][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[208][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[221][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[18][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[226][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[227][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[228][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[192][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[22][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[201][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[205][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[206][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[223][3]_i_1_n_0   | reset_IBUF                               |                7 |              8 |         1.14 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[198][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[219][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[224][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[229][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[230][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[231][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[234][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[237][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[202][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[220][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[217][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[233][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[204][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[222][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[225][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[212][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[238][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[213][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[239][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[207][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[210][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[214][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[194][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[232][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[216][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[1][3]_i_1_n_0     | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[235][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[284][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[282][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[287][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[24][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[28][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[244][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[269][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[246][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[247][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[254][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[263][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[255][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[275][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[252][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[266][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[271][3]_i_1_n_0   | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[280][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[249][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[250][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[25][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[27][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[281][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[33][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[245][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[283][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[285][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[286][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[288][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[289][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[242][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[290][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[291][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[243][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[256][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[240][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[258][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[265][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[261][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[251][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[241][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[260][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[257][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[259][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[267][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[248][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[268][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[26][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[272][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[273][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[274][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[277][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[262][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[278][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[264][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[276][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[253][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[279][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[343][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[331][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[321][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[298][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[301][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[296][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[2][3]_i_1_n_0     | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[294][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[307][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[309][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[30][3]_i_1_n_0    | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[324][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[326][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[327][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[293][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[328][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[320][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[32][3]_i_1_n_0    | reset_IBUF                               |                7 |              8 |         1.14 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[306][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[334][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[335][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[308][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[339][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[325][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[317][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[330][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[332][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[312][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[29][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[303][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[304][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[310][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[313][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[292][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[295][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[314][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[315][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[318][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[31][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[297][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[300][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[311][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[319][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[299][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[302][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[323][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[337][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[316][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[305][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[329][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[322][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[333][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[336][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[340][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[338][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[341][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[342][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[396][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[355][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[395][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[350][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[364][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[367][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[388][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[349][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[353][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[34][3]_i_1_n_0    | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[360][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[362][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[354][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[344][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[356][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[363][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[371][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[373][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[347][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[35][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[366][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[376][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[37][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[386][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[361][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[380][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[379][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[38][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[377][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[381][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[385][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[383][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[390][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[352][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[351][3]_i_1_n_0   | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[370][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[382][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[378][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[387][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[345][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[359][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[36][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[357][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[389][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[348][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[392][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[374][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[368][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[393][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[365][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[375][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[358][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[369][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[372][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[391][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[394][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[346][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[384][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[418][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[423][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[424][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[431][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[428][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[404][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[407][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[434][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[435][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[439][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[43][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[436][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[442][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[443][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[39][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[398][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[422][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[412][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[414][3]_i_1_n_0   | reset_IBUF                               |                7 |              8 |         1.14 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[3][3]_i_1_n_0     | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[421][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[413][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[420][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[399][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[429][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[438][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[410][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[416][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[417][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[430][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[440][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[444][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[432][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[445][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[40][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[401][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[403][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[406][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[415][3]_i_1_n_0   | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[41][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[405][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[419][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[409][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[397][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[425][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[426][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[427][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[42][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[433][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[400][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[441][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[446][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[402][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[437][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[408][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[447][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[448][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[411][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[498][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[452][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[44][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[453][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[456][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[468][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[459][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[466][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[463][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[469][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[454][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[471][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[467][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[460][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[46][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[474][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[475][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[479][3]_i_1_n_0   | reset_IBUF                               |                7 |              8 |         1.14 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[485][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[47][3]_i_1_n_0    | reset_IBUF                               |                7 |              8 |         1.14 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[450][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[482][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[491][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[449][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[45][3]_i_1_n_0    | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[477][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[480][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[489][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[493][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[499][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[49][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[462][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[465][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[470][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[473][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[461][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[484][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[486][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[487][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[488][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[490][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[497][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[458][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[481][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[451][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[48][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[494][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[495][3]_i_1_n_0   | reset_IBUF                               |                7 |              8 |         1.14 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[464][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[457][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[472][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[455][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[476][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[483][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[492][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[496][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[478][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[523][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[532][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[536][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[511][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[525][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[518][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[514][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[545][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[516][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[517][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[539][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[543][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[526][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[544][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[546][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[50][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[533][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[550][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[551][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[501][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[509][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[520][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[515][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[51][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[503][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[528][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[527][3]_i_1_n_0   | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[512][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[506][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[507][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[513][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[519][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[521][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[522][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[52][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[537][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[538][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[500][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[53][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[510][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[540][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[541][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[542][3]_i_1_n_0   | reset_IBUF                               |                7 |              8 |         1.14 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[4][3]_i_1_n_0     | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[505][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[524][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[529][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[530][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[535][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[508][3]_i_1_n_0   | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[547][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[531][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[548][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[549][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[502][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[534][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[54][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[552][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[504][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[575][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[586][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[555][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[569][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[588][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[577][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[561][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[563][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[565][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[557][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[56][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[558][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[587][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[571][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[585][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[55][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[598][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[564][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[583][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[599][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[576][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[573][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[567][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[566][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[589][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[574][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[590][3]_i_1_n_0   | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[592][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[594][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[595][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[553][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[556][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[560][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[572][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[559][3]_i_1_n_0   | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[57][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[581][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[584][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[591][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[593][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[579][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[580][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[582][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[596][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[597][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[59][3]_i_1_n_0    | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[58][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[5][3]_i_1_n_0     | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[600][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[601][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[602][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[570][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[603][3]_i_1_n_0   | reset_IBUF                               |                7 |              8 |         1.14 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[578][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[562][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[554][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[568][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[77][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[605][3]_i_1_n_0   | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[625][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[621][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[626][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[607][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[62][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[639][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[606][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[66][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[67][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[613][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[627][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[604][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[609][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[630][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[61][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[629][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[634][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[64][3]_i_1_n_0    | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[611][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[619][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[623][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[63][3]_i_1_n_0    | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[65][3]_i_1_n_0    | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[638][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[633][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[608][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[616][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[617][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[631][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[635][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[615][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[6][3]_i_1_n_0     | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[610][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[636][3]_i_1_n_0   | reset_IBUF                               |                7 |              8 |         1.14 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[60][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[632][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[620][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[68][3]_i_1_n_0    | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[69][3]_i_1_n_0    | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[622][3]_i_1_n_0   | reset_IBUF                               |                7 |              8 |         1.14 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[71][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[624][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[637][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[618][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[73][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[75][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[612][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[628][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[614][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[70][3]_i_1_n_0    | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[74][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[76][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[72][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[84][3]_i_1_n_0    | reset_IBUF                               |                1 |              8 |         8.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[85][3]_i_1_n_0    | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[95][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[81][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[99][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[9][3]_i_1_n_0     | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[79][3]_i_1_n_0    | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[83][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[89][3]_i_1_n_0    | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[86][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[90][3]_i_1_n_0    | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[97][3]_i_1_n_0    | reset_IBUF                               |                8 |              8 |         1.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[93][3]_i_1_n_0    | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[87][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[91][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[94][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[88][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[78][3]_i_1_n_0    | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[8][3]_i_1_n_0     | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[98][3]_i_1_n_0    | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[92][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[96][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[80][3]_i_1_n_0    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[7][3]_i_1_n_0     | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[82][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[101][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[111][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[109][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[114][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[118][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[10][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[119][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[11][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[123][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[125][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[112][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[117][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[106][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[115][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[108][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[102][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[116][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[126][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[127][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[100][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[129][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[121][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[103][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[113][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[122][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[12][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[131][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[133][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[132][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[0][3]_i_1_n_0     | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[120][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[134][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[124][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[104][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[110][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[128][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[105][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[107][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[130][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[135][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[136][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[137][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[161][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[13][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[146][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[15][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[166][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[14][3]_i_1_n_0    | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[16][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[168][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[159][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[177][3]_i_1_n_0   | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[167][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[178][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[169][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[180][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[138][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[141][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[157][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[155][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[181][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[182][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[184][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[171][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[164][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[174][3]_i_1_n_0   | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[144][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[183][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[185][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[186][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[187][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[188][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[189][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[147][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[153][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[140][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[149][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[145][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[150][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[142][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[156][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[162][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[143][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[152][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[148][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[154][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[165][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[151][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[172][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[173][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[160][3]_i_1_n_0   | reset_IBUF                               |                5 |              8 |         1.60 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[175][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[176][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[163][3]_i_1_n_0   | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[179][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[170][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[139][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[158][3]_i_1_n_0   | reset_IBUF                               |                6 |              8 |         1.33 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[17][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[270][3]_i_1_n_0   | reset_IBUF                               |                4 |              8 |         2.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[236][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[23][3]_i_1_n_0    | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_btn_debounce/counter_reg_reg[0]_0 |                                                                    | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[196][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  ov7670_pclk_IBUF_BUFG               | U_OV7670_MemController/v_counter[7]_i_1_n_0                        | reset_IBUF                               |                3 |              8 |         2.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/line_buffer_1[197][3]_i_1_n_0   | reset_IBUF                               |                2 |              8 |         4.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         |                                                                    | U_OV7670_Master/U_SCCB_controlUnit/SR[0] |                3 |              9 |         3.00 |
+|  pclk_BUFG                           | U_VGA_Controller/U_Pixel_Counter/v_counter                         | reset_IBUF                               |                6 |             10 |         1.67 |
+|  ov7670_pclk_IBUF_BUFG               | U_OV7670_MemController/h_counter[9]_i_1_n_0                        | reset_IBUF                               |                4 |             10 |         2.50 |
+|  U_clk_wiz_1/inst/clk_100Mhz         |                                                                    |                                          |                6 |             10 |         1.67 |
+|  U_clk_wiz_1/inst/clk_100Mhz         |                                                                    | reset_IBUF                               |                7 |             24 |         3.43 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_sobel_filter_top/U_sobel_filter2/p_0_in                          | reset_IBUF                               |                7 |             25 |         3.57 |
+|  ov7670_pclk_IBUF_BUFG               | U_OV7670_MemController/we_i_1_n_0                                  | reset_IBUF                               |                9 |             27 |         3.00 |
+|  U_clk_wiz_1/inst/clk_100Mhz         | U_VGA_Controller/U_Pixel_Counter/E[0]                              | reset_IBUF                               |               12 |             36 |         3.00 |
+|  pclk_BUFG                           |                                                                    | reset_IBUF                               |               14 |             40 |         2.86 |
++--------------------------------------+--------------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
+
+

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu May 29 10:45:38 2025
+# Process ID: 8956
+# Current directory: C:/working/FPGA_HARMAN/250528_VGA_start/250528_VGA_start.runs/impl_1
+# Command line: vivado.exe -log VGA_Controller.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source VGA_Controller.tcl -notrace
+# Log file: C:/working/FPGA_HARMAN/250528_VGA_start/250528_VGA_start.runs/impl_1/VGA_Controller.vdi
+# Journal file: C:/working/FPGA_HARMAN/250528_VGA_start/250528_VGA_start.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source VGA_Controller.tcl -notrace

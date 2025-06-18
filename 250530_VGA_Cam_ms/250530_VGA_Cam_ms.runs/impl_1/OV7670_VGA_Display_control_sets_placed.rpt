@@ -1,0 +1,728 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Wed Jun  4 11:36:16 2025
+| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file OV7670_VGA_Display_control_sets_placed.rpt
+| Design       : OV7670_VGA_Display
+| Device       : xc7a35t
+-----------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   650 |
+|    Minimum number of control sets                        |   650 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    30 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   650 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |   641 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     4 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               6 |            4 |
+| No           | No                    | Yes                    |              66 |           26 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              30 |           11 |
+| Yes          | Yes                   | No                     |            5180 |         2325 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------+----------------------------------------------------------------+------------------+------------------+----------------+--------------+
+|      Clock Signal      |                          Enable Signal                         | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------+----------------------------------------------------------------+------------------+------------------+----------------+--------------+
+|  ov7670_pclk_IBUF_BUFG | U_OV7670_MemController/pix_data[7]                             | reset_IBUF       |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG         |                                                                |                  |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG         |                                                                | reset_IBUF       |                2 |              6 |         3.00 |
+|  ov7670_pclk_IBUF_BUFG | U_OV7670_MemController/pix_data[15]                            | reset_IBUF       |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_8[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_29[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep_3[0]     | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep_4[0]     | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep_9[0]     | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_14[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_16[0] | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_19[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_12[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_1[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_17[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_21[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep_10[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_13[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_2[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep_1[0]     | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_10[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_24[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_25[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep_5[0]     | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_22[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_28[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep_2[0]     | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep_6[0]     | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_18[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_23[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_27[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_3[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep_8[0]     | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_11[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_20[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_26[0] | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_29[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_15[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep_7[0]     | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_34[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_40[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_36[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_6[0]  | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_8[0]  | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_0[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_3[0]  | reset_IBUF       |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_16[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_15[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_5[0]  | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_19[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_1[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep_0[0]     | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep_1[0]     | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep_2[0]     | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_17[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_2[0]  | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep_3[0]     | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep_4[0]     | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_32[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_10[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_18[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_1[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_10[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_11[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_31[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_35[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_37[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_5[0]  | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_7[0]  | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_1[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_11[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_14[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_20[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_12[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_4[0]  | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_6[0]  | reset_IBUF       |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_13[0] | reset_IBUF       |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_33[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_4[0]  | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_38[0] | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_39[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_9[0]  | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_18[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_9[0]  | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__2_7[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[0]_rep__0_30[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_28[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_1[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_21[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_16[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_12[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_32[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_8[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_9[0]  | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_0[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_4[0]  | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_1[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_18[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_29[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_6[0]  | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_8[0]  | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_15[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_11[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_17[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_14[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_17[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_34[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_20[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_5[0]  | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_3[0]  | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_13[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_30[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_7[0]  | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_10[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_2[0]  | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_19[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_23[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_24[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_18[0] | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_16[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_9[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_25[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_2[0]  | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_14[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_12[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_26[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_27[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_28[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_29[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_23[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_25[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_15[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_22[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_30[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_31[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_13[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_3[0]  | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_19[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_21[0] | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_35[0] | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_20[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_27[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_24[0] | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_33[0] | reset_IBUF       |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_22[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_4[0]  | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_5[0]  | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_6[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__2_7[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[1]_rep__0_26[0] | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_6[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_22[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_18[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_10[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_33[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_35[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_37[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_39[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_50[0]        | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_26[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_19[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_13[0]    | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_2[0]     | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_36[0]        | reset_IBUF       |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_34[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_17[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_13[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_24[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_42[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_20[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_47[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_51[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_25[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_0[0]     | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_11[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_1[0]     | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_9[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_14[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_19[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_11[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_16[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_31[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_41[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_43[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_5[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_45[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_52[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_7[0]         | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_46[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_10[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_12[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_15[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_30[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_32[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_40[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_49[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_16[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_17[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_2[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_27[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_14[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_29[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_4[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_28[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_44[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_21[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_15[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_3[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_48[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_23[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_38[0]        | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_12[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_8[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_20[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_23[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_35[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_47[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_37[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_53[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_25[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_21[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_27[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_28[0]    | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_29[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_32[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_38[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_42[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_54[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_39[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_4[0]     | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_31[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_55[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_57[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_50[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_61[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_62[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_34[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_43[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_67[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_69[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_65[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_7[0]     | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_48[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_45[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_73[0]    | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_68[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_75[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_64[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_74[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_76[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_72[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_70[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_26[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_24[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_3[0]     | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_36[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_30[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_40[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_52[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_60[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_58[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_59[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_49[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_46[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_6[0]     | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_66[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_71[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_44[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_33[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_51[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_77[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_78[0]    | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_41[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_79[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_22[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_56[0]    | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_63[0]    | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_30[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_7[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_0[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[5]_7[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_10[0]        | reset_IBUF       |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_11[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_2[0]         | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep__3_7[0]  | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_21[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_22[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_23[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_9[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_11[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_80[0]    | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_16[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep__3_5[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_12[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_13[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_19[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_26[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[5]_0[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_24[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_8[0]     | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep_9[0]     | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_3[0]         | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep__3_10[0] | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_25[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_27[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_29[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_34[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[5]_1[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[5]_2[0]         | reset_IBUF       |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[5]_4[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_1[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep__3_6[0]  | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep__3_1[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep__3_2[0]  | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep__3_8[0]  | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_31[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_1[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_20[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_35[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_14[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_33[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[5]_6[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_10[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_8[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_4[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[5]_5[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep__3_3[0]  | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_17[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_18[0]        | reset_IBUF       |                7 |              8 |         1.14 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep__3_4[0]  | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_5[0]         | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_12[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_0[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_14[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[5]_3[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_13[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[2]_rep__3_9[0]  | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_15[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_32[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_6[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[4]_28[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_19[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_38[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_61[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_33[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_23[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_62[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_20[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_22[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_4[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_41[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_24[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_28[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_42[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_43[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_56[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_57[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_8[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_27[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_9[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_0[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_1[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_44[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_49[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_29[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_10[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_100[0]       | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_45[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_46[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_51[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_6[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_15[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_34[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_48[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_101[0]       | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_59[0]        | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_102[0]       | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_103[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_104[0]       | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_16[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_21[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_2[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_18[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_25[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_26[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_30[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_35[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_37[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_39[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_40[0]        | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_47[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_31[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_5[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_52[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_53[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_17[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_36[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_3[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_50[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_32[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_54[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_55[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_60[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_7[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[6]_58[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_40[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_15[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_42[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_105[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_107[0]       | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_119[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_121[0]       | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_109[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_125[0]       | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_26[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_43[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_47[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_30[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_13[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_48[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_49[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_126[0]       | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_120[0]       | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_17[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_22[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_24[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_106[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_45[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_16[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_23[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_113[0]       | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_118[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_21[0]        | reset_IBUF       |                8 |              8 |         1.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_33[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_31[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_38[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_28[0]        | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_110[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_44[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_14[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_25[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_112[0]       | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_114[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_116[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_18[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_122[0]       | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_2[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_27[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_3[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_35[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_41[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_34[0]        | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_46[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_20[0]        | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_115[0]       | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_11[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_111[0]       | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_12[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_123[0]       | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_19[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_124[0]       | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_29[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_32[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_37[0]        | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_39[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_117[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_108[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_36[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_4[0]         | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_94[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_74[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_64[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_9[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_97[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_58[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_98[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_99[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_0[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_78[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_1[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_63[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_81[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_10[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_57[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_65[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_100[0]       | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_101[0]       | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_76[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_72[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_54[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_102[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_66[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_77[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_84[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_55[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_50[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_53[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_70[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_68[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_51[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_62[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_82[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_60[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_90[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_103[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_104[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_56[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_91[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_61[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_86[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_5[0]         | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_93[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_87[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_95[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_85[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_96[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[8]_0[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_71[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_69[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_79[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_52[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_88[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_59[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_67[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_73[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_83[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_89[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_92[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_75[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_7[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_8[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_80[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_35[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_106[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_37[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_33[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_119[0]       | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_20[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_24[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_40[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_48[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_50[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_12[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_15[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_47[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_51[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_45[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_49[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_116[0]       | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_14[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_2[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_25[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_108[0]       | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_18[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_42[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_109[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_5[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_53[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_43[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_17[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_39[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_16[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_115[0]       | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_4[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_107[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_117[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_13[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[7]_6[0]         | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_41[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_36[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_44[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_52[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_120[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_21[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_38[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_46[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_112[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_118[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_30[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_54[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_110[0]       | reset_IBUF       |                6 |              8 |         1.33 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_22[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_31[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_105[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_11[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_111[0]       | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_113[0]       | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_19[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_23[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_114[0]       | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_27[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_3[0]         | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_28[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_32[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_34[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_26[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_87[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_8[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_89[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_6[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_94[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_55[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_58[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_81[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_66[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_7[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_86[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_92[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_74[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_67[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_72[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_68[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_76[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_78[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_61[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_84[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_65[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_59[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_82[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_73[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_91[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_63[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_64[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_75[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_70[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_60[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_83[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_79[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_90[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_93[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_99[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_77[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_85[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_9[0]         | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_95[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_62[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_80[0]        | reset_IBUF       |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_69[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_71[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_96[0]        | reset_IBUF       |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_97[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_98[0]        | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_88[0]        | reset_IBUF       |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/E[0]                          | reset_IBUF       |                2 |              8 |         4.00 |
+|  ov7670_pclk_IBUF_BUFG | U_OV7670_MemController/v_counter0                              | reset_IBUF       |                3 |              8 |         2.67 |
+|  pclk_BUFG             | U_VGA_Controller/U_Pixel_Counter/v_counter                     | reset_IBUF       |                2 |             10 |         5.00 |
+|  ov7670_pclk_IBUF_BUFG |                                                                | reset_IBUF       |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG         | U_sobel_heeju/p_0_in                                           | reset_IBUF       |                7 |             24 |         3.43 |
+|  clk_IBUF_BUFG         | U_VGA_Controller/U_Pixel_Counter/h_counter_reg[9]_57[0]        | reset_IBUF       |               14 |             36 |         2.57 |
+|  pclk_BUFG             |                                                                | reset_IBUF       |               20 |             42 |         2.10 |
++------------------------+----------------------------------------------------------------+------------------+------------------+----------------+--------------+
+
+
